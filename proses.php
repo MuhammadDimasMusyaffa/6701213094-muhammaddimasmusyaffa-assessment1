@@ -3,12 +3,19 @@
   $angka2 = $_POST['angka2'];
   $operator = $_POST['operator'];
 
-  if ($operator == '+') {
-    $hasil = $angka1 + $angka2;
-  } elseif ($operator == '-') {
-    $hasil = $angka1 - $angka2;
-  } elseif ($operator == '*') {
-    $hasil = $angka1 * $angka2;
+  switch ($operator) {
+    case '+':
+      $hasil = $angka1 + $angka2;
+      break;
+    case '-':
+      $hasil = $angka1 - $angka2;
+      break;
+    case '*':
+      $hasil = $angka1 * $angka2;
+      break;
+    default:
+      $hasil = "Operasi tidak valid";
+      break;
   }
 
   echo "Hasil operasi aritmatika $angka1 $operator $angka2 = $hasil";
